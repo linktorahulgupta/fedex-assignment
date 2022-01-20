@@ -1,0 +1,29 @@
+[
+    {
+        "searchQuery":"Luke Skywalker",
+        "name": "Luke Skywalker",
+        "gender": " male ",
+        "birthYear": " 19BBY ",
+        "eyeColor": " blue ",
+        "skinColor": " fair ",
+        "description": "with multiple results"
+    },
+    {
+        "searchQuery": "r2",
+        "name": "R2-D2",
+        "gender": " n/a ",
+        "birthYear": " 33BBY ",
+        "eyeColor": " red ",
+        "skinColor": " white, blue ",
+        "description": "where charachter name that has special charachter and gender is NA"
+    },
+    {
+        "searchQuery": "&^~±!><)(*&^#|1234567890",
+        "name": "",
+        "gender": "",
+        "birthYear": "",
+        "eyeColor": "",
+        "skinColor": "",
+        "description": "which doesn't exist"
+    }
+]

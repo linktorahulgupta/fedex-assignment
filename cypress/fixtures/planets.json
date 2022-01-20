@@ -1,0 +1,18 @@
+[
+    {
+        "searchQuery":"Hoth",
+        "name": "Hoth",
+        "population": " unknown ",
+        "climate": " frozen ",
+        "gravity": " 1.1 standard ",
+        "description": "where population is unknown"
+    },
+    {
+        "searchQuery":"i±!><)(*",
+        "name": "",
+        "population": "",
+        "climate": "",
+        "gravity": "",
+        "description": "which doesn't exist"
+    }
+]

@@ -1,0 +1,12 @@
+{
+  "baseUrl": "http://localhost:4200",
+  "projectId": "u5cn3p",
+  "reporter": "mochawesome",
+  "screenshotOnRunFailure": true,
+  "reporterOptions": {
+    "overwrite": true,
+    "html": true,
+    "json": true,
+    "reportFilename":"output"
+  }
+}
