@@ -5,9 +5,9 @@
     "passes": 8,
     "pending": 0,
     "failures": 1,
-    "start": "2022-01-21T05:20:01.718Z",
-    "end": "2022-01-21T05:20:24.827Z",
-    "duration": 23109,
+    "start": "2022-01-21T06:03:10.420Z",
+    "end": "2022-01-21T06:03:32.975Z",
+    "duration": 22555,
     "testsRegistered": 9,
     "passPercent": 88.88888888888889,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "84666d0d-c7c9-40ce-8d35-7a813859307c",
+      "uuid": "a3598de7-be17-4b28-aa64-b0a8bc4c1e30",
       "title": "",
       "fullFile": "cypress/integration/e2e/searchTests.js",
       "file": "cypress/integration/e2e/searchTests.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "db7740ea-204c-4855-a1d1-cebd7048bde5",
+          "uuid": "f1fa7212-4752-4d52-b2b4-1235dc259bc4",
           "title": "Service availability Test suite",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Check star wars API status is 200",
               "fullTitle": "Service availability Test suite Check star wars API status is 200",
               "timedOut": null,
-              "duration": 7301,
+              "duration": 6922,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -47,26 +47,26 @@
               "context": null,
               "code": "const response = cy.request('GET', swapiBaseURL);\nresponse.its('status').should('be.eql', 200);",
               "err": {},
-              "uuid": "d6d51d34-9773-4fd3-b97c-49d343636338",
-              "parentUUID": "db7740ea-204c-4855-a1d1-cebd7048bde5",
+              "uuid": "ebd25f9b-7a8b-4911-816e-7765fcaa6f34",
+              "parentUUID": "f1fa7212-4752-4d52-b2b4-1235dc259bc4",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "d6d51d34-9773-4fd3-b97c-49d343636338"
+            "ebd25f9b-7a8b-4911-816e-7765fcaa6f34"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 7301,
+          "duration": 6922,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "4228ea9e-a6d5-4970-8133-c59ad7ddf93f",
+          "uuid": "397a56f5-c5a0-4a9f-a6be-2836764d9c90",
           "title": "Character Search Test suite",
           "fullFile": "",
           "file": "",
@@ -77,7 +77,7 @@
               "title": "Verify search results (using click event) for a character - with multiple results",
               "fullTitle": "Character Search Test suite Verify search results (using click event) for a character - with multiple results",
               "timedOut": null,
-              "duration": 2237,
+              "duration": 2468,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -86,8 +86,8 @@
               "context": null,
               "code": "searchFormObject.checkRadioButton(searchType).should('be.checked');\nsearchFormObject.inputSearchQuery(searchQuery);\ncy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType);\ncharacterSearchResultObject.assertCharacherSearchResult(charachter, 'have.text');",
               "err": {},
-              "uuid": "dc296fe3-4f55-4918-afa6-a9ad3020aeb4",
-              "parentUUID": "4228ea9e-a6d5-4970-8133-c59ad7ddf93f",
+              "uuid": "109dc104-d2ea-4f5a-8367-71ecd51dbdf7",
+              "parentUUID": "397a56f5-c5a0-4a9f-a6be-2836764d9c90",
               "isHook": false,
               "skipped": false
             },
@@ -95,7 +95,7 @@
               "title": "Verify search results (using click event) for a character - where charachter name that has special charachter and gender is NA",
               "fullTitle": "Character Search Test suite Verify search results (using click event) for a character - where charachter name that has special charachter and gender is NA",
               "timedOut": null,
-              "duration": 972,
+              "duration": 890,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -104,27 +104,27 @@
               "context": null,
               "code": "searchFormObject.checkRadioButton(searchType).should('be.checked');\nsearchFormObject.inputSearchQuery(searchQuery);\ncy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType);\ncharacterSearchResultObject.assertCharacherSearchResult(charachter, 'have.text');",
               "err": {},
-              "uuid": "4a3585f4-8776-4813-bad7-d018a6ace849",
-              "parentUUID": "4228ea9e-a6d5-4970-8133-c59ad7ddf93f",
+              "uuid": "ed3f1e95-f0de-4304-9952-92a3c38e7049",
+              "parentUUID": "397a56f5-c5a0-4a9f-a6be-2836764d9c90",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "dc296fe3-4f55-4918-afa6-a9ad3020aeb4",
-            "4a3585f4-8776-4813-bad7-d018a6ace849"
+            "109dc104-d2ea-4f5a-8367-71ecd51dbdf7",
+            "ed3f1e95-f0de-4304-9952-92a3c38e7049"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3209,
+          "duration": 3358,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "e02828a3-87ea-4749-8c81-fa269769578b",
+          "uuid": "ac12a876-f370-4ef1-9a1a-dfa8b0f5b8b5",
           "title": "Planet Search Test suite",
           "fullFile": "",
           "file": "",
@@ -135,7 +135,7 @@
               "title": "Verify search results (using click event) for a planet - where population is unknown",
               "fullTitle": "Planet Search Test suite Verify search results (using click event) for a planet - where population is unknown",
               "timedOut": null,
-              "duration": 978,
+              "duration": 1011,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -144,26 +144,26 @@
               "context": null,
               "code": "searchFormObject.checkRadioButton(searchType).should('be.checked');\nsearchFormObject.inputSearchQuery(searchQuery);\ncy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType);\nplanetSearchResultObject.assertPlanetSearchResult(planet, 'have.text');",
               "err": {},
-              "uuid": "42d28195-45fa-4329-ab50-804faded79ab",
-              "parentUUID": "e02828a3-87ea-4749-8c81-fa269769578b",
+              "uuid": "4622be89-47e2-4b50-849e-6f5d01eb4df9",
+              "parentUUID": "ac12a876-f370-4ef1-9a1a-dfa8b0f5b8b5",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "42d28195-45fa-4329-ab50-804faded79ab"
+            "4622be89-47e2-4b50-849e-6f5d01eb4df9"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 978,
+          "duration": 1011,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "5b7f2062-0b0d-49d4-b4f9-594e8fb6310c",
+          "uuid": "15222283-7d09-4594-8fb6-b08e345907c3",
           "title": "Invalid character Search Test suite",
           "fullFile": "",
           "file": "",
@@ -174,7 +174,7 @@
               "title": "Verify search results (using click event) for a character - which doesn't exist",
               "fullTitle": "Invalid character Search Test suite Verify search results (using click event) for a character - which doesn't exist",
               "timedOut": null,
-              "duration": 976,
+              "duration": 961,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -183,26 +183,26 @@
               "context": null,
               "code": "searchFormObject.checkRadioButton(searchType).should('be.checked');\nsearchFormObject.inputSearchQuery(searchQuery);\ncy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType);\nmainAppObject.isNotFound().should('exist');\ncharacterSearchResultObject.assertCharacherSearchResult(charachter, 'not.exist');",
               "err": {},
-              "uuid": "200e5e88-b03c-4905-9acc-1ed69240d090",
-              "parentUUID": "5b7f2062-0b0d-49d4-b4f9-594e8fb6310c",
+              "uuid": "304fcb91-fdfd-46cc-83ee-1c3e521fdbc4",
+              "parentUUID": "15222283-7d09-4594-8fb6-b08e345907c3",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "200e5e88-b03c-4905-9acc-1ed69240d090"
+            "304fcb91-fdfd-46cc-83ee-1c3e521fdbc4"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 976,
+          "duration": 961,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "8ba4a97e-ff40-4243-9e5b-3399b57217cf",
+          "uuid": "160e3b4b-e843-4865-a2c3-befe8f598b8b",
           "title": "Invalid planet Search Test suite",
           "fullFile": "",
           "file": "",
@@ -213,7 +213,7 @@
               "title": "Verify search results (using click event) for a planet - which doesn't exist",
               "fullTitle": "Invalid planet Search Test suite Verify search results (using click event) for a planet - which doesn't exist",
               "timedOut": null,
-              "duration": 895,
+              "duration": 776,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -222,26 +222,26 @@
               "context": null,
               "code": "searchFormObject.checkRadioButton(searchType).should('be.checked');\nsearchFormObject.inputSearchQuery(searchQuery);\ncy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType);\nmainAppObject.isNotFound().should('exist');\nplanetSearchResultObject.assertPlanetSearchResult(planet, 'not.exist');",
               "err": {},
-              "uuid": "a42819af-b5fd-45d4-afb4-0793a908a80d",
-              "parentUUID": "8ba4a97e-ff40-4243-9e5b-3399b57217cf",
+              "uuid": "c54e9f48-393e-4caa-b242-0d1f9c9eedfa",
+              "parentUUID": "160e3b4b-e843-4865-a2c3-befe8f598b8b",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a42819af-b5fd-45d4-afb4-0793a908a80d"
+            "c54e9f48-393e-4caa-b242-0d1f9c9eedfa"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 895,
+          "duration": 776,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "3f41cbdd-24d1-47a8-8d65-29d902629de8",
+          "uuid": "9e3562be-1337-4055-b73b-fa3198e0c8b3",
           "title": "Additional scenarios",
           "fullFile": "",
           "file": "",
@@ -252,7 +252,7 @@
               "title": "Verify previous search result are removed on searching empty input query",
               "fullTitle": "Additional scenarios Verify previous search result are removed on searching empty input query",
               "timedOut": null,
-              "duration": 5574,
+              "duration": 5579,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -262,11 +262,11 @@
               "code": "searchFormObject.checkRadioButton(searchType).should('be.checked');\nsearchFormObject.inputSearchQuery(searchQuery);\ncy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType);\nplanetSearchResultObject.assertPlanetSearchResult(validPlanetsJson[0], 'have.text');\nsearchFormObject.clearSearchQuery();\nsearchFormObject.clickSubmitButton();\nplanetSearchResultObject.assertPlanetSearchResult(validPlanetsJson[0], 'not.exist');",
               "err": {
                 "message": "AssertionError: Timed out retrying after 4000ms: Expected <h6.card-subtitle.mb-2.text-muted> not to exist in the DOM, but it was continuously found.",
-                "estack": "AssertionError: Timed out retrying after 4000ms: Expected <h6.card-subtitle.mb-2.text-muted> not to exist in the DOM, but it was continuously found.\n    at PlanetSearchResultObject.assertPlanetSearchResult (http://localhost:4200/__cypress/tests?p=cypress/integration/e2e/searchTests.js:482:26)\n    at Context.eval (http://localhost:4200/__cypress/tests?p=cypress/integration/e2e/searchTests.js:285:30)",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected <h6.card-subtitle.mb-2.text-muted> not to exist in the DOM, but it was continuously found.\n    at PlanetSearchResultObject.assertPlanetSearchResult (http://localhost:4200/__cypress/tests?p=cypress/integration/e2e/searchTests.js:467:26)\n    at Context.eval (http://localhost:4200/__cypress/tests?p=cypress/integration/e2e/searchTests.js:270:30)",
                 "diff": null
               },
-              "uuid": "a4977cf1-b7be-472d-a021-7fe23b21f119",
-              "parentUUID": "3f41cbdd-24d1-47a8-8d65-29d902629de8",
+              "uuid": "5b8a7953-43f8-457a-b1af-637903ad0424",
+              "parentUUID": "9e3562be-1337-4055-b73b-fa3198e0c8b3",
               "isHook": false,
               "skipped": false
             },
@@ -274,7 +274,7 @@
               "title": "Verify \"Not Found\" in place of previous search result on changing the search type",
               "fullTitle": "Additional scenarios Verify \"Not Found\" in place of previous search result on changing the search type",
               "timedOut": null,
-              "duration": 1181,
+              "duration": 1147,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -283,8 +283,8 @@
               "context": null,
               "code": "searchFormObject.checkRadioButton(searchType).should('be.checked');\nsearchFormObject.inputSearchQuery(searchQuery);\ncy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType);\nplanetSearchResultObject.assertPlanetSearchResult(validPlanetsJson[0], 'have.text');\nsearchType = \"people\";\nsearchFormObject.checkRadioButton(searchType).should('be.checked');\ncy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType);\nmainAppObject.isNotFound().should('exist');\nplanetSearchResultObject.assertPlanetSearchResult(validPlanetsJson[0], 'not.exist');",
               "err": {},
-              "uuid": "3fccc5da-d46c-468c-aa7a-d46fa9fb336f",
-              "parentUUID": "3f41cbdd-24d1-47a8-8d65-29d902629de8",
+              "uuid": "b6a7a0a4-719c-4528-b712-dad4aa08efe3",
+              "parentUUID": "9e3562be-1337-4055-b73b-fa3198e0c8b3",
               "isHook": false,
               "skipped": false
             },
@@ -292,7 +292,7 @@
               "title": "Verify search results (using enter event) for a planet",
               "fullTitle": "Additional scenarios Verify search results (using enter event) for a planet",
               "timedOut": null,
-              "duration": 734,
+              "duration": 687,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -301,23 +301,23 @@
               "context": null,
               "code": "searchType = \"planets\";\neventType = \"enter\";\nsearchFormObject.checkRadioButton(searchType).should('be.checked');\nsearchFormObject.inputSearchQuery(searchQuery);\ncy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType);\nplanetSearchResultObject.assertPlanetSearchResult(validPlanetsJson[0], 'have.text');",
               "err": {},
-              "uuid": "495b7b5e-39f7-4ae5-8a78-2f11ae77c2ca",
-              "parentUUID": "3f41cbdd-24d1-47a8-8d65-29d902629de8",
+              "uuid": "043f8488-cb0e-4c7c-b230-c8fd343463ea",
+              "parentUUID": "9e3562be-1337-4055-b73b-fa3198e0c8b3",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "3fccc5da-d46c-468c-aa7a-d46fa9fb336f",
-            "495b7b5e-39f7-4ae5-8a78-2f11ae77c2ca"
+            "b6a7a0a4-719c-4528-b712-dad4aa08efe3",
+            "043f8488-cb0e-4c7c-b230-c8fd343463ea"
           ],
           "failures": [
-            "a4977cf1-b7be-472d-a021-7fe23b21f119"
+            "5b8a7953-43f8-457a-b1af-637903ad0424"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 7489,
+          "duration": 7413,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

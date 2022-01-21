@@ -1,6 +1,6 @@
 {
   "baseUrl": "http://localhost:4200",
-  "projectId": "u5cn3p",
+  "projectId": "zb78v4",
   "reporter": "mochawesome",
   "screenshotOnRunFailure": true,
   "reporterOptions": {

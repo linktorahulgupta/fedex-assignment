@@ -16,15 +16,19 @@
     - To use headed mode (to see the text execution in a browser) hit `npm run headTest`
     - To use headed mode with chrome broswer hit `npm run chromeTest`
 - After tests execution are finished, report will be created under `mochawesome-report` in the root directory.
-- Test execution reports are also captured on cypress dashbord https://dashboard.cypress.io/projects/u5cn3p/runs. You will have to login to cypress dashboard using your own cypress dashboard login credential or create a new one with the available sign in options.
+- Test execution reports are also captured on cypress dashbord https://dashboard.cypress.io/projects/zb78v4/runs. You will have to login to cypress dashboard using your own cypress dashboard login credential or create a new one with the available sign in options.
 - Videos are available under `cypress/videos`
 - Screenshots are available under `cypress/screenshots`
 
 ## Notice:
 If you are executing the tests on a windows machine you will have to adjust the slashes in the script block of package.json file!
 
-
 ## Test execution summary
+No of tests = 9
+Passing = 8
+Failing = 1 (Bug-1)
+
+![Test execution summary report screenshot]()
 
 ## Bugs
 1. [Severity-medium] [workaround-available] Previous search results are not cleared on hitting the search button with empty query string.
@@ -32,6 +36,5 @@ If you are executing the tests on a windows machine you will have to adjust the 
 
 ## Backlog
 - [] Add support for cypress schematic package to run tests using `ng e2e`
-
 
 Solution repository will be made private after the interview process is completed to maintain the confidentiality clause of Fedex Digital International.
