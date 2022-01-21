@@ -1,14 +1,14 @@
 # QA Engineer Assessment Solution
 
 ## Introduction
-1. ***Data attributes*** were added to the src code to make resilient css selectors.
-2. ***Page objects*** model used to expose custom css selectors.
-3. Tests are created covering all the scenarios available in the specification.
-4. ***Fixtures*** are used for test data.
-5. ***Custom commands*** created to encapsulate common functions in the entire context of cypress.
-6. ***Mocha awesome reports*** (html as well as json) and ***cypress dashbord*** reporting support is added for reporting purposes. Reports are overwritten with every run. ***Screenshot captured*** are linked in the mocha awesome reports.
-7. ***Videos*** being captured for the every test run. Videos are overwritten with every run. 
-8. Solution is available in a public Github repository https://github.com/linktorahulgupta/fedex-assignment
+- ***Data attributes*** were added to the src code to make resilient css selectors.
+- ***Page objects*** model used to expose custom css selectors.
+- Tests are created covering all the scenarios available in the specification.
+- ***Fixtures*** are used for test data.
+- ***Custom commands*** created to encapsulate common functions in the entire context of cypress.
+- ***Mocha awesome reports*** (html as well as json) and ***cypress dashbord*** reporting support is added for reporting purposes. Reports are overwritten with every run. ***Screenshot captured*** are linked in the mocha awesome reports.
+- ***Videos*** being captured for the every test run. Videos are overwritten with every run. 
+- Solution is available in a public Github repository https://github.com/linktorahulgupta/fedex-assignment
 
 ## How to execute the tests
 - Start the serve using `ng serve`
@@ -20,7 +20,7 @@
 - Videos are available under `cypress/videos`
 - Screenshots are available under `cypress/screenshots`
 
-# Notice:
+## Notice:
 If you are executing the tests on a windows machine you will have to adjust the slashes in the script block of package.json file!
 
 
