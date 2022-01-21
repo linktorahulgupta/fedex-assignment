@@ -28,7 +28,7 @@ No of tests = 9
 Passing = 8
 Failing = 1 (Bug-1)
 
-![Test execution summary report screenshot]()
+![Test execution summary report screenshot](https://github.com/linktorahulgupta/fedex-assignment/blob/4da2b58fac01b966a45f0adf85907dbd9abfe3a7/test-execution-summary-screenshot.png)
 
 ## Bugs
 1. [Severity-medium] [workaround-available] Previous search results are not cleared on hitting the search button with empty query string.
