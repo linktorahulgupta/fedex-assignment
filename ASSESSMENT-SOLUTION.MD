@@ -1,50 +1,37 @@
 # QA Engineer Assessment Solution
 
 ## Introduction
+1. ***Data attributes*** were added to the src code to make resilient css selectors.
+2. ***Page objects*** model used to expose custom css selectors.
+3. Tests are created covering all the scenarios available in the specification.
+4. ***Fixtures*** are used for test data.
+5. ***Custom commands*** created to encapsulate common functions in the entire context of cypress.
+6. ***Mocha awesome reports*** (html as well as json) and ***cypress dashbord*** reporting support is added for reporting purposes. Reports are overwritten with every run. ***Screenshot captured*** are linked in the mocha awesome reports.
+7. ***Videos*** being captured for the every test run. Videos are overwritten with every run. 
+8. Solution is available in a public Github repository https://github.com/linktorahulgupta/fedex-assignment
 
-1. 
+## How to execute the tests
+- Start the serve using `ng serve`
+- Start the test run using `npm run cyTest`
+    - To use headed mode (to see the text execution in a browser) hit `npm run headTest`
+    - To use headed mode with chrome broswer hit `npm run chromeTest`
+- After tests execution are finished, report will be created under `mochawesome-report` in the root directory.
+- Test execution reports are also captured on cypress dashbord https://dashboard.cypress.io/projects/u5cn3p/runs. You will have to login to cypress dashboard using your own cypress dashboard login credential or create a new one with the available sign in options.
+- Videos are available under `cypress/videos`
+- Screenshots are available under `cypress/screenshots`
+
+# Notice:
+If you are executing the tests on a windows machine you will have to adjust the slashes in the script block of package.json file!
 
 
-Good luck!
+## Test execution summary
 
-## Tips
+## Bugs
+1. [Severity-medium] [workaround-available] Previous search results are not cleared on hitting the search button with empty query string.
+2. [Severity-low] [workaround-available] Extra spaces available around the characteristics values in the search result. 
 
-* Choose an IDE to your liking (We recommend the Free Micrsoft Visual Studio Code)
-* It should not take more than a three to four hours to demonstrate your skills with this project
-* If you get stuck (especially with the app itself or installations), please contact us
-* Refactor and restructure anything in the project if you think that works better
-* When you `npm start` the application know that `npm run e2e` will start it again (and fail). So kill a running application if startup fails.
-* We have left the angular + cypress builder configuration empty in angular.json file, we'll leave it to you to update it
+## Backlog
+- [] Add support for cypress schematic package to run tests using `ng e2e`
 
-Please provide your documentation in the [ASSESSMENT-SOLUTION.MD](./ASSESSMENT-SOLUTION.MD) file.
 
-## Assignment
-
-### Start
-
-1. Start the server using `ng serve`.
-2. Start test using `npm run test1`
-
-### The coding
-
-3. In the [README.MD](./README.md) file, you will see the APP Specs, this will be the basis for you test cases. Please read these carefully.
-4. Write test automation scripts using one of the below options (4.1 or 4.2)
-4.1 **using Cucumber and cypress (BDD approach)** that would document the user stories, verify the application features, whilst also including comments on code you write
-4.2  **using mocha and cypress (describe and IT block)**
-5. add test reports support to show test exceution status
-6. Please report any bugs or anomalies you will find
-7. Also note that the sourcecode of the app is running on your machine so you have full access to make your test code as efficient as possible like adding meaning test ids to make selectors easier
-8. In angular.json file. Fix tnt-assignment-e2e block by using cypress builder if you want to run cypess test using command `ng e2e`
-
-### Done? -> The feedback
-
-When the assessment is completed and your tests run and show your skills, push your work to GitHub and provide us a link of your branch. Alternatively zip your project (exclude node_modules folder please) and email it back to us
-
-## Important Notice
-
-* By doing this assignment, you are bound by our confidentiality and data protection policies. That means that you are not allowed to discuss or share anything to any third party (public internet, physical person, company, etc.)
-* You most probably will be asked to answer various questions around your deliverables of the assignment afterwards
-
-We ask you to treat this assessment as confidential so we can apply the scenarios to
-future candidates also. Your solution will not be kept after the assessment and
-will not be used by FedEx Digital International.
+Solution repository will be made private after the interview process is completed to maintain the confidentiality clause of Fedex Digital International.

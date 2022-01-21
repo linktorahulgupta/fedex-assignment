@@ -1,24 +1,21 @@
 /// <reference types="cypress" />
-// Require() function is used instead of cy.fixture() to utilize the json array object outside 'it' test block.
+
+// Inbuilt cy.fixture() function of cypress has intentionally not being used here
+// to load fixtures so we can use foreach loop outside 'it' test block.
 const validCharactersJson = require('../../fixtures/characters.json');
 const validPlanetsJson = require('../../fixtures/planets.json');
+const inValidCharactersJson = require('../../fixtures/inValidCharacters.json');
+const inValidPlanetsJson = require('../../fixtures/inValidPlanets.json');
 import MainApp from '../pageObjects/MainApp'
 import CharacterSearchResult from '../pageObjects/CharacterSearchResult'
 import PlanetSearchResult from '../pageObjects/PlanetSearchResult'
 import SearchForm from '../pageObjects/SearchForm'
-let mainAppObject
-let characterSearchResultObject
-let planetSearchResultObject
-let searchFormObject
+let mainAppObject = new MainApp();
+let characterSearchResultObject = new CharacterSearchResult();
+let planetSearchResultObject = new PlanetSearchResult();
+let searchFormObject = new SearchForm();
 let swapiBaseURL = 'https://swapi.dev/api/'
 let appBaseURL = '/'
-
-before(() => {
-    mainAppObject = new MainApp()
-    characterSearchResultObject = new CharacterSearchResult()
-    planetSearchResultObject = new PlanetSearchResult()
-    searchFormObject = new SearchForm()
-})
 
 beforeEach(() => {
     cy.visit(appBaseURL)
@@ -54,76 +51,89 @@ describe("Character Search Test suite", () => {
     // })
 
     validCharactersJson.forEach(charachter => {
-        var {searchQuery, name, gender, birthYear, eyeColor, skinColor, description} = charachter
+        var searchQuery = charachter.searchQuery
+        var description = charachter.description
         var searchType = "people"
         var eventType = "click"
         it('Verify search results (using click event) for a character - '+ description, function() {
             searchFormObject.checkRadioButton(searchType).should('be.checked')
             searchFormObject.inputSearchQuery(searchQuery)
             cy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType)
-            if(description === "which doesn't exist"){
-                mainAppObject.isNotFound().should('exist')
-            }else{
-                characterSearchResultObject.getCharachterName().should('have.text',name)
-                characterSearchResultObject.getGenderValue().should('have.text',gender)
-                characterSearchResultObject.getBirthYearValue().should('have.text',birthYear)
-                characterSearchResultObject.getEyeColorValue().should('have.text',eyeColor)
-                characterSearchResultObject.getSkinColorValue().should('have.text',skinColor)
-            }
+            characterSearchResultObject.assertCharacherSearchResult(charachter, 'have.text')
         })
     })
 })
 
 describe("Planet Search Test suite", () => {
     validPlanetsJson.forEach(planet => {
-        var {searchQuery, name, population, climate, gravity, description} = planet
+        var searchQuery = planet.searchQuery
+        var description = planet.description
         var searchType = "planets"
         var eventType = "click"
         it('Verify search results (using click event) for a planet - '+ description, function() {
             searchFormObject.checkRadioButton(searchType).should('be.checked')
             searchFormObject.inputSearchQuery(searchQuery)
             cy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType)
-            if(description === "which doesn't exist"){
-                mainAppObject.isNotFound().should('exist')
-            }else{
-                planetSearchResultObject.getPlanetName().should('have.text',name)
-                planetSearchResultObject.getPopulationValue().should('have.text',population)
-                planetSearchResultObject.getClimateValue().should('have.text',climate)
-                planetSearchResultObject.getGravityValue().should('have.text',gravity)
-            }
+            planetSearchResultObject.assertPlanetSearchResult(planet, 'have.text')
+        })
+    })
+})
+
+describe("Invalid character Search Test suite", () => {
+    inValidCharactersJson.forEach(charachter => {
+        var searchQuery = charachter.searchQuery
+        var description = charachter.description
+        var searchType = "people"
+        var eventType = "click"
+        it('Verify search results (using click event) for a character - '+ description, function() {
+            searchFormObject.checkRadioButton(searchType).should('be.checked')
+            searchFormObject.inputSearchQuery(searchQuery)
+            cy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType)
+            mainAppObject.isNotFound().should('exist')
+            characterSearchResultObject.assertCharacherSearchResult(charachter, 'not.exist')
+        })
+    })
+})
+
+describe("Invalid planet Search Test suite", () => {
+    inValidPlanetsJson.forEach(planet => {
+        var searchQuery = planet.searchQuery
+        var description = planet.description
+        var searchType = "planets"
+        var eventType = "click"
+        it('Verify search results (using click event) for a planet - '+ description, function() {
+            searchFormObject.checkRadioButton(searchType).should('be.checked')
+            searchFormObject.inputSearchQuery(searchQuery)
+            cy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType)
+            mainAppObject.isNotFound().should('exist')
+            planetSearchResultObject.assertPlanetSearchResult(planet, 'not.exist')
         })
     })
 })
 
 describe("Additional scenarios", () => {
-    var {searchQuery, name, population, climate, gravity, description} = validPlanetsJson[0]
+    var searchQuery = validPlanetsJson[0].searchQuery
     var searchType = "planets"
     var eventType = "click"
     it('Verify previous search result are removed on searching empty input query', function() {
         searchFormObject.checkRadioButton(searchType).should('be.checked')
         searchFormObject.inputSearchQuery(searchQuery)
         cy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType)
-        planetSearchResultObject.getPlanetName().should('have.text',name)
-        planetSearchResultObject.getPopulationValue().should('have.text',population)
-        planetSearchResultObject.getClimateValue().should('have.text',climate)
-        planetSearchResultObject.getGravityValue().should('have.text',gravity)
+        planetSearchResultObject.assertPlanetSearchResult(validPlanetsJson[0], 'have.text')
         searchFormObject.clearSearchQuery()
         searchFormObject.clickSubmitButton()
-        planetSearchResultObject.getPlanetName().should('not.exist')
+        planetSearchResultObject.assertPlanetSearchResult(validPlanetsJson[0], 'not.exist')
     })
     it('Verify "Not Found" in place of previous search result on changing the search type', function() {
         searchFormObject.checkRadioButton(searchType).should('be.checked')
         searchFormObject.inputSearchQuery(searchQuery)
         cy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType)
-        planetSearchResultObject.getPlanetName().should('have.text',name)
-        planetSearchResultObject.getPopulationValue().should('have.text',population)
-        planetSearchResultObject.getClimateValue().should('have.text',climate)
-        planetSearchResultObject.getGravityValue().should('have.text',gravity)
+        planetSearchResultObject.assertPlanetSearchResult(validPlanetsJson[0], 'have.text')
         searchType = "people"
         searchFormObject.checkRadioButton(searchType).should('be.checked')
-        cy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery)
+        cy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType)
         mainAppObject.isNotFound().should('exist')
-        planetSearchResultObject.getPlanetName().should('not.exist')
+        planetSearchResultObject.assertPlanetSearchResult(validPlanetsJson[0], 'not.exist')
     })
     it('Verify search results (using enter event) for a planet', function() {
         searchType = "planets"
@@ -131,9 +141,6 @@ describe("Additional scenarios", () => {
         searchFormObject.checkRadioButton(searchType).should('be.checked')
         searchFormObject.inputSearchQuery(searchQuery)
         cy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType)
-        planetSearchResultObject.getPlanetName().should('have.text',name)
-        planetSearchResultObject.getPopulationValue().should('have.text',population)
-        planetSearchResultObject.getClimateValue().should('have.text',climate)
-        planetSearchResultObject.getGravityValue().should('have.text',gravity)
+        planetSearchResultObject.assertPlanetSearchResult(validPlanetsJson[0], 'have.text')
     })
 })

@@ -1,12 +1,22 @@
+//Created a custom command which can potentially intercept 
+//any request made to swapi to avoid negative test failures 
+//incase swapi response status code is not 200
+
 Cypress.Commands.add('interceptUntilResults', (searchFormObject, swapiBaseURL, searchType, searchQuery, eventType) => {
     var encodedSearchQuery = encodeURIComponent(searchQuery.trim())
     var encodedSearchURL = swapiBaseURL + searchType +'/?search='+ encodedSearchQuery
     cy.intercept('GET', encodedSearchURL).as('getResponse')
-    if (eventType === "click"){ 
-        searchFormObject.clickSubmitButton()
-     } else {
-         cy.log("inside else")
-         searchFormObject.enterSubmitButton()}
+    var typeOfEvent = {"click":"click", "enter":"enter"}
+    switch(eventType){
+        case typeOfEvent.click:
+            cy.log("inside click event")
+            searchFormObject.clickSubmitButton()
+            break
+        case typeOfEvent.enter:
+            cy.log("inside click event")
+            searchFormObject.enterSubmitButton()
+            break
+    }
     cy.wait('@getResponse', {'timeout':10000}).its('response.statusCode').should('be.eql', 200)
 })
 

@@ -1,25 +1,26 @@
+//This page class will expose custom css selector based on data attribute
 const dataAttribute = "data-test"
 class SearchFormObject{
     getSearchForm(){
-        return cy.get('['+dataAttribute+'="search-form"]')
+        return cy.get(`[${dataAttribute}="search-form"]`)
     }
     getPeopleRadioButton(){
-        return cy.get('['+dataAttribute+'="people-radio"]')
+        return cy.get(`[${dataAttribute}="people-radio"]`)
     }
     getPeopleRadioButtonLabel(){
-        return cy.get('['+dataAttribute+'="people-label"]')
+        return cy.get(`[${dataAttribute}="people-label"]`)
     }
     getPlanetsRadioButton(){
-        return cy.get('['+dataAttribute+'="planets-radio"]')
+        return cy.get(`[${dataAttribute}="planets-radio"]`)
     }
     getPlanetsRadioButtonLabel(){
-        return cy.get('['+dataAttribute+'="planets-label"]')
+        return cy.get(`[${dataAttribute}="planets-label"]`)
     }
     getQuerySearchInput(){
-        return cy.get('['+dataAttribute+'="query-search"]')
+        return cy.get(`[${dataAttribute}="query-search"]`)
     }
     getSubmitButton(){
-        return cy.get('['+dataAttribute+'="submit-button"]')
+        return cy.get(`[${dataAttribute}="submit-button"]`)
     }
     checkRadioButton(searchType){
         return (searchType === "people") ? this.getPeopleRadioButton().check() : this.getPlanetsRadioButton().check()

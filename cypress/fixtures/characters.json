@@ -16,14 +16,5 @@
         "eyeColor": " red ",
         "skinColor": " white, blue ",
         "description": "where charachter name that has special charachter and gender is NA"
-    },
-    {
-        "searchQuery": "&^~±!><)(*&^#|1234567890",
-        "name": "",
-        "gender": "",
-        "birthYear": "",
-        "eyeColor": "",
-        "skinColor": "",
-        "description": "which doesn't exist"
     }
 ]
