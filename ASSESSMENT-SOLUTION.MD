@@ -6,8 +6,8 @@
 - Tests are created covering all the scenarios available in the specification.
 - ***Fixtures*** are used for test data.
 - ***Custom commands*** created to encapsulate common functions in the entire context of cypress.
-- ***Mocha awesome reports*** (html as well as json) and ***cypress dashbord*** reporting support is added for reporting purposes. Reports are overwritten with every run. ***Screenshot captured*** are linked in the mocha awesome reports.
-- ***Videos*** being captured for the every test run. Videos are overwritten with every run. 
+- ***Mocha awesome reports*** (html as well as json) and ***cypress dashbord*** reporting support is added for reporting purposes. Reports are overwritten with every run. ***Screenshots captured*** are linked in the mocha awesome reports.
+- ***Videos*** being captured for every test run. Videos are overwritten with every run. 
 - Solution is available in a public Github repository https://github.com/linktorahulgupta/fedex-assignment
 
 ## How to execute the tests

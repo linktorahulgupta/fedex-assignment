@@ -34,22 +34,6 @@ describe("Service availability Test suite", () => {
 })
 
 describe("Character Search Test suite", () => {
-    // validCharactersJson.forEach(charachterArr => {
-    //     charachterArr.childNodes.forEach(charachter =>{
-    //         const {searchQuery, name, gender, birthYear, eyeColor, skinColor, description} = charachter
-    //         it.only('Verify search results for a character - '+ description, function() {
-    //             searchFormObject.checkPeopleRadioButton().should('be.checked')
-    //             searchFormObject.inputSearchQuery(searchQuery)
-    //             searchFormObject.clickSubmitButton()
-    //             characterSearchResultObject.getCharachterName().should('have.text',name);
-    //             characterSearchResultObject.getGenderValue().should('have.text',gender);
-    //             characterSearchResultObject.getBirthYearValue().should('have.text',birthYear);
-    //             characterSearchResultObject.getEyeColorValue().should('have.text',eyeColor);
-    //             characterSearchResultObject.getSkinColorValue().should('have.text',skinColor);
-    //         })
-    //     })
-    // })
-
     validCharactersJson.forEach(charachter => {
         var searchQuery = charachter.searchQuery
         var description = charachter.description
