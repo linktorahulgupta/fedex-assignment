@@ -9,11 +9,9 @@ Cypress.Commands.add('interceptUntilResults', (searchFormObject, swapiBaseURL, s
     var typeOfEvent = {"click":"click", "enter":"enter"}
     switch(eventType){
         case typeOfEvent.click:
-            cy.log("inside click event")
             searchFormObject.clickSubmitButton()
             break
         case typeOfEvent.enter:
-            cy.log("inside click event")
             searchFormObject.enterSubmitButton()
             break
     }

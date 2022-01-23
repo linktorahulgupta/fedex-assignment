@@ -14,14 +14,14 @@
 
       <div *ngIf="!isLoading">
         <div *ngIf="searchType === 'people'">
-          <div *ngFor="let character of searchResult">
+          <div *ngFor="let character of searchResult;let i = index" [attr.data-card-index]="i">
             <app-character [character]="character"></app-character>
             <br>
           </div>
         </div>
 
         <div *ngIf="searchType === 'planets'">
-          <div *ngFor="let planet of searchResult">
+          <div *ngFor="let planet of searchResult;let i = index" [attr.data-card-index]="i">
             <app-planet [planet]="planet"></app-planet>
             <br>
           </div>

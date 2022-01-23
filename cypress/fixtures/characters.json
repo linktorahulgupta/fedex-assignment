@@ -1,12 +1,12 @@
 [
     {
-        "searchQuery":"Luke Skywalker",
-        "name": "Luke Skywalker",
-        "gender": " male ",
-        "birthYear": " 19BBY ",
-        "eyeColor": " blue ",
-        "skinColor": " fair ",
-        "description": "with multiple results"
+        "searchQuery":"R5",
+        "name": "R5-D4",
+        "gender": " n/a ",
+        "birthYear": " unknown ",
+        "eyeColor": " red ",
+        "skinColor": " white, red ",
+        "description": "where gender is n/a and birthyear is unknown"
     },
     {
         "searchQuery": "r2",

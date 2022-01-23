@@ -1,5 +1,13 @@
 [
     {
+        "searchQuery":"Alderaan",
+        "name": "Alderaan",
+        "population": " 2000000000 ",
+        "climate": " temperate ",
+        "gravity": " 1 standard ",
+        "description": "where population is in billions"
+    },
+    {
         "searchQuery":"Hoth",
         "name": "Hoth",
         "population": " unknown ",
