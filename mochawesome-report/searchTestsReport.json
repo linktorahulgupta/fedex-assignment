@@ -1,0 +1,420 @@
+{
+  "stats": {
+    "suites": 7,
+    "tests": 11,
+    "passes": 10,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-01-23T20:00:33.669Z",
+    "end": "2022-01-23T20:00:58.653Z",
+    "duration": 24984,
+    "testsRegistered": 11,
+    "passPercent": 90.9090909090909,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bb46ddef-d042-426c-84b2-2ae18d0ad2a2",
+      "title": "",
+      "fullFile": "cypress/integration/e2e/searchTests.js",
+      "file": "cypress/integration/e2e/searchTests.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1ae52524-0cef-430b-86fc-ace61ddc6b80",
+          "title": "Service availability test suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check star wars API status is 200",
+              "fullTitle": "Service availability test suite Check star wars API status is 200",
+              "timedOut": null,
+              "duration": 7092,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = cy.request('GET', swapiBaseURL);\nresponse.its('status').should('be.eql', 200);",
+              "err": {},
+              "uuid": "5acfef8d-6ed1-4515-824d-be46c5707eb9",
+              "parentUUID": "1ae52524-0cef-430b-86fc-ace61ddc6b80",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5acfef8d-6ed1-4515-824d-be46c5707eb9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7092,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "3314c5ff-90f4-410d-bd16-022258e3a36d",
+          "title": "Multiple characters search results test suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify multiple search results returned for \"Luke Skywalker, Anakin Skywalker, Shmi Skywalker\" using search query - \"Skywalker\"",
+              "fullTitle": "Multiple characters search results test suite Verify multiple search results returned for \"Luke Skywalker, Anakin Skywalker, Shmi Skywalker\" using search query - \"Skywalker\"",
+              "timedOut": null,
+              "duration": 2420,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "searchFormObject.checkRadioButton(searchType).should('be.checked');\nsearchFormObject.inputSearchQuery(searchQuery);\ncy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType);\nsearchResults.forEach(charachter => {\n  characterSearchResultObject.assertCharacherSearchResult(charachter, mutlipleCardIndex, 'have.text');\n  mutlipleCardIndex = mutlipleCardIndex + 1;\n});",
+              "err": {},
+              "uuid": "9ec2279f-cdd6-4614-a269-85e9c5864a58",
+              "parentUUID": "3314c5ff-90f4-410d-bd16-022258e3a36d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9ec2279f-cdd6-4614-a269-85e9c5864a58"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2420,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "cd1b4143-69c2-4100-a8ce-9fbba1c3fc7e",
+          "title": "Valid character search test suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify search results (using click event) for a character - where gender is n/a and birthyear is unknown",
+              "fullTitle": "Valid character search test suite Verify search results (using click event) for a character - where gender is n/a and birthyear is unknown",
+              "timedOut": null,
+              "duration": 1077,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "searchFormObject.checkRadioButton(searchType).should('be.checked');\nsearchFormObject.inputSearchQuery(searchQuery);\ncy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType);\ncharacterSearchResultObject.assertCharacherSearchResult(charachter, cardIndex, 'have.text');",
+              "err": {},
+              "uuid": "1c72d337-ca0e-4b47-9db5-8ee4704e0bd6",
+              "parentUUID": "cd1b4143-69c2-4100-a8ce-9fbba1c3fc7e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify search results (using click event) for a character - where charachter name that has special charachter and gender is NA",
+              "fullTitle": "Valid character search test suite Verify search results (using click event) for a character - where charachter name that has special charachter and gender is NA",
+              "timedOut": null,
+              "duration": 765,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "searchFormObject.checkRadioButton(searchType).should('be.checked');\nsearchFormObject.inputSearchQuery(searchQuery);\ncy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType);\ncharacterSearchResultObject.assertCharacherSearchResult(charachter, cardIndex, 'have.text');",
+              "err": {},
+              "uuid": "9fdecd5f-651c-4e6c-a7db-8433f6a8acbf",
+              "parentUUID": "cd1b4143-69c2-4100-a8ce-9fbba1c3fc7e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1c72d337-ca0e-4b47-9db5-8ee4704e0bd6",
+            "9fdecd5f-651c-4e6c-a7db-8433f6a8acbf"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1842,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "d949be9c-8e4a-4aeb-aa99-145eae8095d0",
+          "title": "Valid planet search test suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify search results (using click event) for a planet - where population is in billions",
+              "fullTitle": "Valid planet search test suite Verify search results (using click event) for a planet - where population is in billions",
+              "timedOut": null,
+              "duration": 976,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "searchFormObject.checkRadioButton(searchType).should('be.checked');\nsearchFormObject.inputSearchQuery(searchQuery);\ncy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType);\nplanetSearchResultObject.assertPlanetSearchResult(planet, cardIndex, 'have.text');",
+              "err": {},
+              "uuid": "1b68d62d-1aa0-4dfe-b164-6f39ea7e14ca",
+              "parentUUID": "d949be9c-8e4a-4aeb-aa99-145eae8095d0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify search results (using click event) for a planet - where population is unknown",
+              "fullTitle": "Valid planet search test suite Verify search results (using click event) for a planet - where population is unknown",
+              "timedOut": null,
+              "duration": 848,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "searchFormObject.checkRadioButton(searchType).should('be.checked');\nsearchFormObject.inputSearchQuery(searchQuery);\ncy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType);\nplanetSearchResultObject.assertPlanetSearchResult(planet, cardIndex, 'have.text');",
+              "err": {},
+              "uuid": "b0d1c468-a797-49c8-b514-f508c61ac114",
+              "parentUUID": "d949be9c-8e4a-4aeb-aa99-145eae8095d0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1b68d62d-1aa0-4dfe-b164-6f39ea7e14ca",
+            "b0d1c468-a797-49c8-b514-f508c61ac114"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1824,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "66a20187-a54a-4570-a9c1-bbc781da98bc",
+          "title": "Invalid character Search Test suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify search results (using click event) for a character - which doesn't exist",
+              "fullTitle": "Invalid character Search Test suite Verify search results (using click event) for a character - which doesn't exist",
+              "timedOut": null,
+              "duration": 923,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "searchFormObject.checkRadioButton(searchType).should('be.checked');\nsearchFormObject.inputSearchQuery(searchQuery);\ncy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType);\nmainAppObject.isNotFound().should('exist');\nmainAppObject.isCardAvailable(cardIndex).should('not.exist');",
+              "err": {},
+              "uuid": "e1f43c3c-8008-4bee-81df-431c9207ab02",
+              "parentUUID": "66a20187-a54a-4570-a9c1-bbc781da98bc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e1f43c3c-8008-4bee-81df-431c9207ab02"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 923,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "9e323b99-324b-4e42-b472-12987300f47e",
+          "title": "Invalid planet search Test suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify search results (using click event) for a planet - which doesn't exist",
+              "fullTitle": "Invalid planet search Test suite Verify search results (using click event) for a planet - which doesn't exist",
+              "timedOut": null,
+              "duration": 681,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "searchFormObject.checkRadioButton(searchType).should('be.checked');\nsearchFormObject.inputSearchQuery(searchQuery);\ncy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType);\nmainAppObject.isNotFound().should('exist');\nmainAppObject.isCardAvailable(cardIndex).should('not.exist');",
+              "err": {},
+              "uuid": "b1095c31-948b-40e7-9f19-f0d008f96487",
+              "parentUUID": "9e323b99-324b-4e42-b472-12987300f47e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b1095c31-948b-40e7-9f19-f0d008f96487"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 681,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "a1baf6f7-2797-4c48-b086-a818cbb564cf",
+          "title": "Additional scenarios",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify previous search result are removed on searching empty input query",
+              "fullTitle": "Additional scenarios Verify previous search result are removed on searching empty input query",
+              "timedOut": null,
+              "duration": 5423,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"../cypress/screenshots/e2e/searchTests.js/Additional scenarios -- Verify previous search result are removed on searching empty input query (failed).png\"",
+              "code": "searchFormObject.checkRadioButton(searchType).should('be.checked');\nsearchFormObject.inputSearchQuery(searchQuery);\ncy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType);\ncharacterSearchResultObject.assertCharacherSearchResult(validCharactersJson[0], cardIndex, 'have.text');\nsearchFormObject.clearSearchQuery();\nsearchFormObject.clickSubmitButton();\nmainAppObject.isCardAvailable(cardIndex).should('not.exist');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected <div> not to exist in the DOM, but it was continuously found.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected <div> not to exist in the DOM, but it was continuously found.\n    at Context.eval (http://localhost:4200/__cypress/tests?p=cypress/integration/e2e/searchTests.js:304:46)",
+                "diff": null
+              },
+              "uuid": "bf48a62f-bbf5-42d8-8c75-319c07dffb4b",
+              "parentUUID": "a1baf6f7-2797-4c48-b086-a818cbb564cf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify \"Not Found\" in place of previous search result on changing the search type",
+              "fullTitle": "Additional scenarios Verify \"Not Found\" in place of previous search result on changing the search type",
+              "timedOut": null,
+              "duration": 1084,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "searchFormObject.checkRadioButton(searchType).should('be.checked');\nsearchFormObject.inputSearchQuery(searchQuery);\ncy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType);\ncharacterSearchResultObject.assertCharacherSearchResult(validCharactersJson[0], cardIndex, 'have.text');\nsearchType = 'planets';\nsearchFormObject.checkRadioButton(searchType).should('be.checked');\ncy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType);\nmainAppObject.isNotFound().should('exist');\nmainAppObject.isCardAvailable(cardIndex).should('not.exist');",
+              "err": {},
+              "uuid": "ce41dce8-4a5a-4180-9080-e89104c333f6",
+              "parentUUID": "a1baf6f7-2797-4c48-b086-a818cbb564cf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify search results (using enter event) for a planet",
+              "fullTitle": "Additional scenarios Verify search results (using enter event) for a planet",
+              "timedOut": null,
+              "duration": 842,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "searchType = 'people';\neventType = 'enter';\nsearchFormObject.checkRadioButton(searchType).should('be.checked');\nsearchFormObject.inputSearchQuery(searchQuery);\ncy.interceptUntilResults(searchFormObject, swapiBaseURL, searchType, searchQuery, eventType);\ncharacterSearchResultObject.assertCharacherSearchResult(validCharactersJson[0], cardIndex, 'have.text');",
+              "err": {},
+              "uuid": "8ad33b52-61c2-4bea-9a94-bb6ba367cc17",
+              "parentUUID": "a1baf6f7-2797-4c48-b086-a818cbb564cf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ce41dce8-4a5a-4180-9080-e89104c333f6",
+            "8ad33b52-61c2-4bea-9a94-bb6ba367cc17"
+          ],
+          "failures": [
+            "bf48a62f-bbf5-42d8-8c75-319c07dffb4b"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 7349,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "searchTestsReport",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": true,
+        "html": true,
+        "json": true,
+        "reportFilename": "searchTestsReport"
+      },
+      "version": "6.0.1"
+    }
+  }
+}
