@@ -24,8 +24,8 @@
 If you are executing the tests on a windows machine you will have to adjust the slashes in the script block of package.json file!
 
 ## Test execution summary
-- No of tests = 9
-    - Passing = 8
+- No of tests = 10
+    - Passing = 9
     - Failing = 1 (Bug-1)
 
 ![Test execution summary report screenshot](https://github.com/linktorahulgupta/fedex-assignment/blob/4da2b58fac01b966a45f0adf85907dbd9abfe3a7/test-execution-summary-screenshot.png)
